@@ -18,6 +18,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y docker.io
 
+    - name: Start Docker
+      run: |
+        sudo systemctl start docker
+        docker --version
+        docker ps
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
 
